@@ -1,0 +1,18 @@
+html, body {
+    height: 50%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#form-holder {
+    text-align: center;
+}
