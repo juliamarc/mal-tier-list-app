@@ -2,19 +2,19 @@
 
 {% block body %}
 
-<ol>
-  <li>Download the <a href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a>
-    spreadsheet and fill it out</li>
-  <li>Upload the filled out spreadsheet
-    <div id="form-holder">
-      <form action="" method=post enctype=multipart/form-data>
-      <input type=file name=ods_file>
-      <br />
-      <input id="upload-btn" type=submit value=Upload>
-    </form>
-    </div>
-  </li>
-</ol>
+<div id="instructions">
+  Upload a filled out <a href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a>
+  spreadsheet
+</div>
+
+<div id="form-holder">
+  <form action="" method=post enctype=multipart/form-data>
+    <label class="btn btn-default btn-sm center-block btn-file">
+      <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
+      <input type="file" style="display: none;" name=ods_file onchange='this.form.submit();'>
+    </label>
+  </form>
+</div>
 
 <div id="error-box">{{ error_info }}</div>
 

@@ -1,6 +1,8 @@
 import os
 import uuid
 
+from werkzeug.exceptions import RequestEntityTooLarge
+from waitress import serve
 
 from flask import Flask, render_template, request
 
@@ -17,6 +19,10 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 4 * 1024 * 1024
 
+
+@app.errorhandler(RequestEntityTooLarge)
+def handle_bad_request(e):
+    return 'bad request!', 413
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index.html', methods=['GET', 'POST'])
@@ -65,3 +71,4 @@ if __name__ == '__main__':
         os.makedirs(UPLOAD_FOLDER)
 
     app.run(debug=True)
+    # serve(app, host="127.0.0.1", port=5000)

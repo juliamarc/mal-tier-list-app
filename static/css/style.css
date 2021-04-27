@@ -1,6 +1,6 @@
-html, body {
-    height: 50%;
-}
+/* html, body {
+    height: 25%;
+} */
 
 html {
     display: table;
@@ -15,4 +15,26 @@ body {
 
 #form-holder {
     text-align: center;
+}
+
+#instructions {
+    text-align: center;
+    font-size: large;
+    margin-bottom: 15px;
+}
+
+input[type=submit] {
+    font-family: 'Roboto', sans-serif;
+    padding:5px 15px; 
+    background: #ffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+label {
+    width: 50%;
 }
