@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<form action="/">
+  <input type="submit" value="Back to home page" />
+</form>
+
+<h2>BBCode</h2>
+<textarea rows="10" cols="90">{{ bbcode }}</textarea>
+
+<h2>Preview</h2>
+
+{{ html_preview | safe }}
+
+{% endblock %}
