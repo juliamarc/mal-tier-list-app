@@ -13,7 +13,7 @@ from waitress import serve
 from werkzeug.exceptions import RequestEntityTooLarge
 
 
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = '/tmp'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
