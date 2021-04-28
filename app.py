@@ -1,5 +1,6 @@
 import os
 import uuid
+import warnings
 
 import click
 import mal_tier_list_bbcode_gen.exceptions as exceptions
@@ -44,13 +45,18 @@ def index():
         try:
             f.save(stored_filename)
 
-            tl_gen = TierListGenerator(stored_filename)
-            tl_gen.generate()
+            with warnings.catch_warnings(record=True) as w:
+                tl_gen = TierListGenerator(stored_filename)
+                tl_gen.generate()
+                warns = [warn.message for warn in w]
         except (
-            exceptions.GoogleDriveSourceError,
             exceptions.EntriesPerRowMissingError,
             exceptions.EntriesPerRowNotANumberError,
+            exceptions.GoogleDriveSourceError,
             exceptions.HeaderIncompleteError,
+            exceptions.InvalidImageSourceError,
+            exceptions.InvalidMALURL,
+            exceptions.SettingsSheetMissingError,
         ) as e:
             return render_template('index.html', error_info=str(e))
         finally:
@@ -60,7 +66,7 @@ def index():
                 pass
 
         return render_template('result.html', html_preview=tl_gen.html,
-                               bbcode=tl_gen.bbcode)
+                               bbcode=tl_gen.bbcode, warnings=warns)
 
     return render_template('index.html')
 

@@ -11,6 +11,8 @@
   <textarea rows="10" cols="80">{{ bbcode }}</textarea>
 </div>
 
+<div id="warn-box">{% for warn in warnings %}<span id="warn">&#9888;</span> {{ warn }} <br /> {% endfor %}</div>
+
 <h2>Preview</h2>
 
 {{ html_preview | safe }}
