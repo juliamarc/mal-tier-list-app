@@ -2,12 +2,14 @@
 
 {% block body %}
 
-<form action="/">
-  <input type="submit" value="Back to home page" />
+<form id='back-btn' action="/">
+  <input type="submit" value="Home page" />
 </form>
 
 <h2>BBCode</h2>
-<textarea rows="10" cols="90">{{ bbcode }}</textarea>
+<div id="bbocde-textarea">
+  <textarea rows="10" cols="80">{{ bbcode }}</textarea>
+</div>
 
 <h2>Preview</h2>
 
