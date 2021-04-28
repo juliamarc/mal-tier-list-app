@@ -1,6 +1,8 @@
+import logging
 import os
 import uuid
 import warnings
+import sys
 
 import click
 import mal_tier_list_bbcode_gen.exceptions as exceptions
@@ -16,6 +18,8 @@ UPLOAD_FOLDER = 'uploads'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 4 * 1024 * 1024
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 
 @app.errorhandler(RequestEntityTooLarge)
