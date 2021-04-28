@@ -2,17 +2,12 @@ import os
 import uuid
 
 import click
-
-from werkzeug.exceptions import RequestEntityTooLarge
-from waitress import serve
+import mal_tier_list_bbcode_gen.exceptions as exceptions
 
 from flask import Flask, render_template, request, send_from_directory
-
-from mal_tier_list_bbcode_gen.bbcodegenerator import BBCodeGenerator
-from mal_tier_list_bbcode_gen.image import GoogleDriveSourceError
-from mal_tier_list_bbcode_gen.spreadsheetparser import (
-    SpreadsheetParser, EntriesPerRowMissingError, EntriesPerRowNotANumberError,
-    HeaderIncompleteError)
+from mal_tier_list_bbcode_gen.tierlistgenerator import TierListGenerator
+from waitress import serve
+from werkzeug.exceptions import RequestEntityTooLarge
 
 
 UPLOAD_FOLDER = 'uploads'
@@ -49,19 +44,14 @@ def index():
         try:
             f.save(stored_filename)
 
-            parser = SpreadsheetParser(stored_filename)
-            parser.parse_tiers()
-
-            generator = BBCodeGenerator(parser.settings, parser.tiers)
-            generator.generate_bbcode()
-
-            bbcode = generator.bbcode
-            html_preview = generator._generate_html_preview()
-        except (GoogleDriveSourceError,
-                EntriesPerRowMissingError,
-                EntriesPerRowNotANumberError,
-                HeaderIncompleteError,
-                KeyError) as e:
+            tl_gen = TierListGenerator(stored_filename)
+            tl_gen.generate()
+        except (
+            exceptions.GoogleDriveSourceError,
+            exceptions.EntriesPerRowMissingError,
+            exceptions.EntriesPerRowNotANumberError,
+            exceptions.HeaderIncompleteError,
+        ) as e:
             return render_template('index.html', error_info=str(e))
         finally:
             try:
@@ -69,8 +59,8 @@ def index():
             except FileNotFoundError:
                 pass
 
-        return render_template('result.html', html_preview=html_preview,
-                               bbcode=bbcode)
+        return render_template('result.html', html_preview=tl_gen.html,
+                               bbcode=tl_gen.bbcode)
 
     return render_template('index.html')
 
