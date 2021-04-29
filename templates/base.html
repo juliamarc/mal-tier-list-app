@@ -9,7 +9,9 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <title>MALTierListApp</title>
 </head>
@@ -20,7 +22,11 @@
     {% block body %}
     {% endblock %}
   </div>
-
+  <div id="gh-container">
+    <a href="https://github.com/juliamarc/mal-tier-list-bbcode-gen">
+      <span id="gh-icon" class="fab fa-github" aria-hidden="true" />
+    </a>
+  </div>
 </body>
 
 </html>
