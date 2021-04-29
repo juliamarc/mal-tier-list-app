@@ -9,92 +9,87 @@ body {
     vertical-align: middle;
 }
 
-h1, h2, #form-holder, #back-btn, #bbocde-textarea, #error-box, #instructions,
-#gh-container, #btn-container{
+.center {
     text-align: center;
+    margin: 20px auto;
 }
 
-#instructions
- {
+.more-space-bottom {
+    margin-bottom: 20px;
+}
+
+.less-space {
+    margin-bottom: 0px;
+    margin-top: -10px;
+}
+
+.large {
     font-size: large;
-    margin-bottom: 15px;
 }
 
-#tlg-btn {
+.half-width {
+    width: 50%;
+}
+
+.nice-btn {
+    font-size: medium;
     font-family: 'Roboto', sans-serif;
-    padding:5px 10px;
-    background: #ffff;
+    padding: 10px 10px;
+    color: #000;
+    background: #fff;
     border-style: solid;
     border-width: 1px;
     border-color: grey;
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    color: black;
     transition:color 150ms;
     text-decoration: none;
-    content: "\f105";
 }
 
-#tlg-btn:hover {
+.nice-btn:hover {
+    color: #000;
 	background: #eee;
-}
-
-label {
-    width: 50%;
+    text-decoration: none;
 }
 
 #error-box:not(:empty) {
     padding: 10px;
+    color: #df3e33;
     background-color: #ffe2e0;
     border-style: solid;
     border-width: 2px;
     border-color: #df3e33;
-    color: #df3e33;
-    margin-top: 10px;
-    margin-bottom: 5px;
     border-radius: 5px;
     max-width: 500px;
     width: 75%;
-    margin: 15px auto;
+    margin-top: 10px;
 }
 
 #warn-box:not(:empty) {
     padding: 10px;
+    color: black;
     background-color: #fff4ca;
     border-style: solid;
     border-width: 2px;
     border-color: #ffcc00;
-    color: black;
-    margin-top: 10px;
-    margin-bottom: 5px;
     border-radius: 5px;
     max-width: 600px;
     width: 75%;
-    margin: 15px auto;
 }
 
-#warn {
-    font-size: large;
+.warn {
     color: #ffcc00;
 }
 
 #gh-icon {
 	color: #000;
 	font-size:40pt;
+    margin: 30px;
 	padding: 5px;
     transition:color 150ms;
 }
 
 #gh-icon:hover {
 	color: #444;
-}
-
-#gh-container {
-    margin-top: 30px;
-}
-
-#btn-container{
-    margin-top: 15px;
-    margin-bottom: 15px;
 }

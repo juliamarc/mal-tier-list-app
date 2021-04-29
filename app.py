@@ -76,6 +76,11 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/tutorial.html', methods=['GET'])
+def tutorial():
+    return render_template('tutorial.html')
+
+
 @click.command()
 @click.option('--dev', is_flag=True)
 def main(dev):

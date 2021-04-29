@@ -2,18 +2,12 @@
 
 {% block body %}
 
-<div id="instructions">
+<div class="center large">
   Upload a filled out <a href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a>
   spreadsheet
 </div>
 
-<div id="btn-container">
-  <a id="tlg-btn" href="/">
-    How to fill out&nbsp;&nbsp;<i class="fas fa-pencil-alt"></i>
-  </a>
-</div>
-
-<div id="form-holder">
+<div class="center half-width less-space">
   <form action="" method=post enctype=multipart/form-data>
     <label class="btn btn-default btn-sm center-block btn-file">
       <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
@@ -21,7 +15,12 @@
     </label>
   </form>
 </div>
+<div id="error-box" class="center">{{ error_info }}</div>
 
-<div id="error-box">{{ error_info }}</div>
+<div class="center">
+  <a class="nice-btn" href="/tutorial.html">
+    <i class="large fas fa-question-circle"></i>&nbsp;How to fill out
+  </a>
+</div>
 
 {% endblock %}

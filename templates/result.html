@@ -2,20 +2,20 @@
 
 {% block body %}
 
-<div id="btn-container">
-  <a id="tlg-btn" href="/">
+<div class="center">
+  <a class="nice-btn" href="/">
     <i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Home page
   </a>
 </div>
 
-<h2><i class="fas fa-code"></i>&nbsp;BBCode</h2>
-<div id="bbocde-textarea">
+<h2 class="center"><i class="fas fa-code"></i>&nbsp;BBCode</h2>
+<div class="center">
   <textarea readonly rows="10" cols="80">{{ bbcode }}</textarea>
 </div>
 
-<div id="warn-box">{% for warn in warnings %}<i id="warn" class="fas fa-exclamation-triangle"></i> {{ warn }} <br /> {% endfor %}</div>
+<div id="warn-box">{% for warn in warnings %}<i class="warn large fas fa-exclamation-triangle"></i> {{ warn }} <br /> {% endfor %}</div>
 
-<h2><i class="far fa-file-code"></i>&nbsp;Preview</h2>
+<h2 class="center"><i class="far fa-file-code"></i>&nbsp;Preview</h2>
 
 {{ html_preview | safe }}
 
