@@ -14,10 +14,11 @@ from werkzeug.exceptions import RequestEntityTooLarge
 
 
 UPLOAD_FOLDER = '/tmp'
+MAX_CONTENT_LENGTH_MB = 4
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 4 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH_MB * 1024 * 1024
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
@@ -78,9 +79,6 @@ def index():
 @click.command()
 @click.option('--dev', is_flag=True)
 def main(dev):
-    if not os.path.exists(UPLOAD_FOLDER):
-        os.makedirs(UPLOAD_FOLDER)
-
     if dev:
         app.run(debug=True)
     else:
