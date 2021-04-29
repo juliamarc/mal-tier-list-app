@@ -9,7 +9,8 @@ body {
     vertical-align: middle;
 }
 
-h1, h2, #form-holder, #back-btn, #bbocde-textarea, #error-box, #instructions {
+h1, h2, #form-holder, #back-btn, #bbocde-textarea, #error-box, #instructions,
+#gh-container, #btn-container{
     text-align: center;
 }
 
@@ -19,16 +20,24 @@ h1, h2, #form-holder, #back-btn, #bbocde-textarea, #error-box, #instructions {
     margin-bottom: 15px;
 }
 
-input[type=submit] {
+#tlg-btn {
     font-family: 'Roboto', sans-serif;
-    padding:5px 15px;
+    padding:5px 10px;
     background: #ffff;
     border-style: solid;
     border-width: 1px;
     border-color: grey;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
+    color: black;
+    transition:color 150ms;
+    text-decoration: none;
+    content: "\f105";
+}
+
+#tlg-btn:hover {
+	background: #eee;
 }
 
 label {
@@ -60,12 +69,32 @@ label {
     margin-top: 10px;
     margin-bottom: 5px;
     border-radius: 5px;
-    max-width: 500px;
+    max-width: 600px;
     width: 75%;
     margin: 15px auto;
 }
 
 #warn {
     font-size: large;
-    color: black;
+    color: #ffcc00;
+}
+
+#gh-icon {
+	color: #000;
+	font-size:40pt;
+	padding: 5px;
+    transition:color 150ms;
+}
+
+#gh-icon:hover {
+	color: #444;
+}
+
+#gh-container {
+    margin-top: 30px;
+}
+
+#btn-container{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
