@@ -2,18 +2,20 @@
 
 {% block body %}
 
-<form id='back-btn' action="/">
-  <input type="submit" value="Home page" />
-</form>
-
-<h2>BBCode</h2>
-<div id="bbocde-textarea">
-  <textarea rows="10" cols="80">{{ bbcode }}</textarea>
+<div id="btn-container">
+  <a id="tlg-btn" href="/">
+    <i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Home page
+  </a>
 </div>
 
-<div id="warn-box">{% for warn in warnings %}<span id="warn">&#9888;</span> {{ warn }} <br /> {% endfor %}</div>
+<h2><i class="fas fa-code"></i>&nbsp;BBCode</h2>
+<div id="bbocde-textarea">
+  <textarea readonly rows="10" cols="80">{{ bbcode }}</textarea>
+</div>
 
-<h2>Preview</h2>
+<div id="warn-box">{% for warn in warnings %}<i id="warn" class="fas fa-exclamation-triangle"></i> {{ warn }} <br /> {% endfor %}</div>
+
+<h2><i class="far fa-file-code"></i>&nbsp;Preview</h2>
 
 {{ html_preview | safe }}
 
