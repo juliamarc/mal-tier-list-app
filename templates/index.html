@@ -2,6 +2,14 @@
 
 {% block body %}
 
+<div id="description" class="center">
+  Generate BBCode for a tier list with custom images corresponding to entries
+  in MAL (characters, anime, manga, people).
+  Each image is also a link to the respective entry's MAL page.
+  Best placed in a MAL blog post.
+  <a href="https://myanimelist.net/blog.php?eid=844887">Here's an example</a>.
+</div>
+
 <div class="center large">
   Upload a filled out <a href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a>
   spreadsheet
@@ -10,7 +18,8 @@
 <div class="center half-width less-space">
   <form action="" method=post enctype=multipart/form-data>
     <label class="btn btn-default btn-sm center-block btn-file">
-      <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
+      <!-- <i class="fa fa-upload fa-2x" aria-hidden="true"></i> -->
+      <i class="fas fa-file-upload fa-2x"></i>
       <input type="file" style="display: none;" name=ods_file onchange='this.form.submit();'>
     </label>
   </form>
@@ -19,7 +28,7 @@
 
 <div class="center">
   <a class="nice-btn" href="/tutorial.html">
-    <i class="large fas fa-question-circle"></i>&nbsp;How to fill out
+    <i class="large fas fa-question-circle"></i>&nbsp;How to fill out tiers.ods
   </a>
 </div>
 
