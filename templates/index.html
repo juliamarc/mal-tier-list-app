@@ -3,11 +3,15 @@
 {% block body %}
 
 <div id="description" class="center">
-  Generate BBCode for a tier list with custom images corresponding to entries
-  in MAL (characters, anime, manga, people).
-  Each image is also a link to the respective entry's MAL page.
-  Best placed in a MAL blog post.
-  <a href="https://myanimelist.net/blog.php?eid=844887">Here's an example</a>.
+  <p>
+    Generate BBCode for a tier list with custom images corresponding to entries
+    in <a href="https://myanimelist.net/">MyAnimeList</a> (characters, anime, manga, people).
+    Each image is also a link to the respective entry's MAL page.
+    Best placed in a MAL blog post.
+  </p>
+  <p>
+    <a href="https://myanimelist.net/blog.php?eid=844887">Here's an example</a>.
+  </p>
 </div>
 
 <div class="center large">
@@ -18,13 +22,13 @@
 <div class="center half-width less-space">
   <form action="" method=post enctype=multipart/form-data>
     <label class="btn btn-default btn-sm center-block btn-file">
-      <!-- <i class="fa fa-upload fa-2x" aria-hidden="true"></i> -->
       <i class="fas fa-file-upload fa-2x"></i>
       <input type="file" style="display: none;" name=ods_file onchange='this.form.submit();'>
     </label>
   </form>
 </div>
-<div id="error-box" class="center">{{ error_info }}</div>
+<div id="error-box" class="center">{{ error_info }}{% if error_info %}&nbsp;<i class="large far fa-grin-beam-sweat">{%
+    endif %}</i></div>
 
 <div class="center">
   <a class="nice-btn" href="/tutorial.html">
