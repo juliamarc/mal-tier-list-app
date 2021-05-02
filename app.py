@@ -40,9 +40,13 @@ def index():
     if request.method == 'POST':
         f = request.files.get('ods_file')
         if not f:
-            return render_template('index.html', error_info='No file')
+            return render_template(
+                'index.html',
+                error_info='No file')
         if f.mimetype != 'application/vnd.oasis.opendocument.spreadsheet':
-            return render_template('index.html', error_info='Wrong file type')
+            return render_template(
+                'index.html',
+                error_info='Wrong file type. Should be .ods')
 
         stored_filename = os.path.join(app.config['UPLOAD_FOLDER'],
                                        '.'.join([str(uuid.uuid4()), 'ods']))

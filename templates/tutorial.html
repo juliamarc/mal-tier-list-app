@@ -1,114 +1,125 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div id="tutorial">
-    <div class="center">
-        <a class="nice-btn" href="/">
-            <i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Home page
-        </a>
-    </div>
 
-    <h2><i class="fas fa-question-circle"></i>&nbsp;Why a spreadsheet</h2>
-    <hr>
-    <p>
+<div class="tutorial">
+  <div class="row justify-content-center">
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 text-center">
+      <a class="btn btn-outline-dark btn-block" href="/">
+        <i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Home page
+      </a>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-11 col-md-9 col-lg-8 col-xl-5">
+      <h2><i class="fas fa-question-circle"></i>&nbsp;Why a spreadsheet</h2>
+      <hr>
+      <p>
         Using a spreadsheet to create the tier list allows you to keep the file for later editing.
         It also makes for a better user interface than just a text file.
-    </p>
-    <p>
+      </p>
+      <p>
         I'm using <a href="https://www.libreoffice.org/download/download/">LibreOffice</a> 7.1.
-    </p>
+      </p>
+    </div>
+  </div>
 
-    <h2><i class="fas fa-th-list"></i>&nbsp;Tiers</h2>
-    <hr>
-    Each tier is represented by one sheet of the <a
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-11 col-md-9 col-lg-8 col-xl-5">
+      <h2><i class="fas fa-th-list"></i>&nbsp;Tiers</h2>
+      <hr>
+      Each tier is represented by one sheet of the <a
         href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a> spreadsheet.
-    A tier consists of a <i>header</i> and a list of <i>entries</i>.
-    Both headers and entries are images.
+      A tier consists of a <i>header</i> and a list of <i>entries</i>.
+      Both headers and entries are images.
 
-    <div class="outer">
-        <div class="inner">
-            <img src="static/images/tutorial-tiers.png" alt="tiers">
-        </div>
+      <div class="img-container">
+        <img class="img-fluid" src="static/images/tutorial-tiers.png" alt="tiers">
+      </div>
+      <div class="img-container">
+        <img class="img-fluid" src="static/images/tutorial-header.png" alt="header">
+      </div>
+      <div class="img-container">
+        <img class="img-fluid" src="static/images/tutorial-entries.png" alt="entries">
+      </div>
     </div>
-    <div class="outer">
-        <div class="inner">
-            <img src="static/images/tutorial-header.png" alt="header">
-        </div>
-    </div>
-    <div class="outer">
-        <div class="inner">
-            <img src="static/images/tutorial-entries.png" alt="entries">
-        </div>
-    </div>
+  </div>
 
-    <h2><i class="fas fa-images"></i>&nbsp;Image source</h2>
-    <hr>
-    The images need to be hosted somewhere. Currently there are two options.
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-11 col-md-9 col-lg-8 col-xl-5">
+      <h2><i class="fas fa-images"></i>&nbsp;Image source</h2>
+      <hr>
+      The images need to be hosted somewhere. Currently there are two options.
 
-    <h3>Direct URL</h3>
-    Upload your images to an image hosting service like <a href="https://postimages.org/">Postimages</a> and use the
-    direct URL.
+      <h3>Direct URL</h3>
+      Upload your images to an image hosting service like <a href="https://postimages.org/">Postimages</a> and use the
+      direct URL.
 
-    <h3>Google Drive</h3>
-    <p>
+      <h3>Google Drive</h3>
+      <p>
         Upload your images to Google Drive.
-    </p>
-    <br />
-    <ol>
+      </p>
+      <br />
+      <ol>
         <li>Create a folder for the images.
         </li>
         <br />
         <li>Make the folder public ("Anyone on the internet with this link can view").
-            <div class="outer">
-                <div class="inner">
-                    <img src="static/images/tutorial-anyone-with-link.png" alt="anyone-with-link">
-                </div>
-            </div>
+          <div class="img-container">
+            <img src="static/images/tutorial-anyone-with-link.png" alt="anyone-with-link">
+          </div>
         </li>
         <br />
         <li>Get a share link for each image ("Get link").
-            <div class="outer">
-                <div class="inner">
-                    <img class="" src="static/images/tutorial-get-link.png" alt="get-link">
-                </div>
-            </div>
+          <div class="img-container">
+            <img class="" src="static/images/tutorial-get-link.png" alt="get-link">
+          </div>
         </li>
-    </ol>
+      </ol>
 
-    <h3>Note on image size</h3>
-    <p>
+      <h3>Note on image size</h3>
+      <p>
         It's best for all the images to be the same size.
         MAL's BBCode doesn't allow for resizing, so the desired image size needs to be set before upload.
         Remember to make the header width divisible by the entry image's width if you want the images to tile nicely.
-    </p>
+      </p>
+    </div>
+  </div>
 
-    <h2><i class="fas fa-quote-left"></i>&nbsp;Headers</h2>
-    <hr>
-    <p>
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-11 col-md-9 col-lg-8 col-xl-5">
+      <h2><i class="fas fa-quote-left"></i>&nbsp;Headers</h2>
+      <hr>
+      <p>
         The <a href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a> file has
         links to some default headers uploaded to Postimages.
         Each tier has a color based on the typical tier list style.
         They don't contain any text, however.
         I generated these headers from this
         <a
-            href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/example-headers/mal_tiers_slim.xcf">mal_tiers_slim.xcf</a>
+          href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/example-headers/mal_tiers_slim.xcf">mal_tiers_slim.xcf</a>
         file
         (<a href="https://www.gimp.org/">GIMP</a> format).
         If you wish to keep the same tier list color scheme, you can use it to create your own customized headers.
-    </p>
+      </p>
+    </div>
+  </div>
 
-    <h2><i class="fas fa-cogs"></i>&nbsp;Settings</h2>
-    <hr>
-    <p>
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-11 col-md-9 col-lg-8 col-xl-5">
+      <h2><i class="fas fa-cogs"></i>&nbsp;Settings</h2>
+      <hr>
+      <p>
         In the SETTINGS sheet you can specify the order in which the tiers will be displayed.
         You can also remove a tier from the "Tier order" list to exclude it from the final tier list.
         The "Entries per row" setting decides how many entries will be displayed in one row.
-    </p>
-    <div class="outer">
-        <div class="inner">
-            <img src="static/images/tutorial-settings.png" alt="settings">
-        </div>
+      </p>
+      <div class="img-container">
+        <img src="static/images/tutorial-settings.png" alt="settings">
+      </div>
     </div>
-
+  </div>
 </div>
+
 {% endblock %}

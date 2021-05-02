@@ -2,38 +2,48 @@
 
 {% block body %}
 
-<div id="description" class="center">
-  <p>
-    Generate BBCode for a tier list with custom images corresponding to entries
-    in <a href="https://myanimelist.net/">MyAnimeList</a> (characters, anime, manga, people).
-    Each image is also a link to the respective entry's MAL page.
-    Best placed in a MAL blog post.
-  </p>
-  <p>
-    <a href="https://myanimelist.net/blog.php?eid=844887">Here's an example</a>.
-  </p>
+<div class="row justify-content-center">
+  <div class="col-11 col-sm-9 col-md-8 col-lg-8 col-xl-4 text-center">
+    <p>
+      Generate BBCode for a tier list with custom images corresponding to entries
+      in <a href="https://myanimelist.net/">MyAnimeList</a> (characters, anime, manga, people).
+      <a href="https://myanimelist.net/blog.php?eid=844887">Example character tier list</a>.
+    </p>
+  </div>
 </div>
 
-<div class="center large">
-  Upload a filled out <a href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a>
-  spreadsheet
+<div class="row justify-content-center">
+  <div class="col-11 col-sm-9 col-md-8 col-lg-8 col-xl-5 text-center">
+    <h5>
+      Upload a filled out <a
+        href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a>
+      spreadsheet
+      <a class="btn btn-outline-dark btn-sm rounded-circle" href="/tutorial.html">
+        <i class="fas fa-question-circle"></i>
+      </a>
+    </h5>
+  </div>
 </div>
 
-<div class="center half-width less-space">
-  <form action="" method=post enctype=multipart/form-data>
-    <label class="btn btn-default btn-sm center-block btn-file">
-      <i class="fas fa-file-upload fa-2x"></i>
-      <input type="file" style="display: none;" name=ods_file onchange='this.form.submit();'>
-    </label>
-  </form>
+<div class="row justify-content-center">
+  <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3 text-center">
+    <form action="" method=post enctype=multipart/form-data>
+      <label class="btn btn-outline-dark btn-block btn-file">
+        <i class="fas fa-file-upload fa-lg"></i>
+        <input type="file" style="display: none;" name=ods_file onchange='this.form.submit();'>
+      </label>
+    </form>
+  </div>
 </div>
-<div id="error-box" class="center">{{ error_info }}{% if error_info %}&nbsp;<i class="large far fa-grin-beam-sweat">{%
-    endif %}</i></div>
 
-<div class="center">
-  <a class="nice-btn" href="/tutorial.html">
-    <i class="large fas fa-question-circle"></i>&nbsp;How to fill out tiers.ods
-  </a>
+{% if error_info %}
+<div class="row justify-content-center">
+  <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+    <div class="alert alert-danger" role="alert">
+      {{ error_info }}&nbsp;<i class="large far fa-grin-beam-sweat"></i>
+    </div>
+  </div>
 </div>
+{% endif %}
 
 {% endblock %}
