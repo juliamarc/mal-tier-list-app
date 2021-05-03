@@ -52,7 +52,7 @@ div[class^="col-"] {
 
 /* footer */
 
-#container {
+.container-fluid {
     display: flex;
     flex-direction: column;
     min-height: 95vh;

@@ -3,7 +3,7 @@
 {% block body %}
 
 <div class="row justify-content-center">
-  <div class="col-11 col-sm-9 col-md-8 col-lg-8 col-xl-4 text-center">
+  <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-4 text-center">
     <p>
       Generate BBCode for a tier list with custom images corresponding to entries
       in <a href="https://myanimelist.net/">MyAnimeList</a> (characters, anime, manga, people).
@@ -13,20 +13,16 @@
 </div>
 
 <div class="row justify-content-center">
-  <div style="margin-bottom: -20px;" class="col-11 col-sm-9 col-md-8 col-lg-8 col-xl-5 text-center">
-    <h5>
+  <div class="col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 text-center">
+    <div style="display: inline-block;">
+    <h6>
       Upload a filled out <a
         href="https://github.com/juliamarc/mal-tier-list-bbcode-gen/raw/main/tiers.ods">tiers.ods</a>
       spreadsheet
       <a class="btn btn-outline-dark btn-sm rounded-circle" href="/tutorial.html">
         <i class="fas fa-question-circle"></i>
       </a>
-    </h5>
-  </div>
-</div>
-
-<div class="row justify-content-center">
-  <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3 text-center">
+    </h6>
     <form action="" method=post enctype=multipart/form-data>
       <label class="btn btn-outline-dark btn-block btn-file">
         <i class="fas fa-file-upload fa-lg"></i>
@@ -34,11 +30,12 @@
       </label>
     </form>
   </div>
+  </div>
 </div>
 
 {% if error_info %}
 <div class="row justify-content-center">
-  <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+  <div class="col-10 col-sm-7 col-md-7 col-lg-5 col-xl-4">
     <div class="alert alert-danger" role="alert">
       {{ error_info }}&nbsp;<i class="large far fa-grin-beam-sweat"></i>
     </div>
